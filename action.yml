@@ -1,0 +1,24 @@
+name: 'protoc with go plugin'
+description: 'provides a protoc installation with the go gen plugin compiled from source.'
+author: 'oa'
+branding:
+  icon: 'package'
+  color: 'purple'
+inputs:
+  go-out:
+    description: 'directory to generate the protobuf files to'
+    required: true
+  grpc-out:
+    description: 'directory to generate the grpc files to'
+    required: true
+  proto-file-directory:
+    description: 'directory containing the proto files'
+    required: true
+runs:
+  using: 'docker'
+  # todo: update before each release
+  image: 'docker://ghcr.io/oa/protoc-go-action:0.1.0'
+  args:
+    - ${{ inputs.go-out }}
+    - ${{ inputs.grpc-out }}
+    - ${{ inputs.proto-file-directory }}
