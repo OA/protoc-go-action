@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: compile proto files
-        uses: oa/protoc-go-action@0.1.0
+        uses: oa/protoc-go-action@0.1.1
         with:
           go-out: service/pb
           grpc-out: service/pb
@@ -31,5 +31,5 @@ jobs:
 ### docker run
 
 ```shell
-docker run --rm -v $(pwd):/project ghcr.io/oa/protoc-go-action:0.1.0 service/pb service/pb proto
+docker run --rm -v $(pwd):/project ghcr.io/oa/protoc-go-action:0.1.1 service/pb service/pb proto
 ```

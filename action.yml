@@ -17,7 +17,7 @@ inputs:
 runs:
   using: 'docker'
   # todo: update before each release
-  image: 'docker://ghcr.io/oa/protoc-go-action:0.1.0'
+  image: 'docker://ghcr.io/oa/protoc-go-action:0.1.1'
   args:
     - ${{ inputs.go-out }}
     - ${{ inputs.grpc-out }}
